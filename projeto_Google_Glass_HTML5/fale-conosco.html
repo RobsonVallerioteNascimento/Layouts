@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tudo sobre Google Glass</title>
+        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="css/form.css">
+    </head>
+    <body>
+        <section id="interface">
+            <header id="cabecalho">
+                <hgroup>
+                    <h1>Google Glass</h1>
+                    <h2>A revolução do Google está chegando</h2>
+                </hgroup>
+
+                <img src="imagens/glass-oculos-preto-peq.png" alt="Oculos preto pequeno" id="icone">
+
+                <nav id="menu">
+                    <h1>Menu Principal</h1>
+                    <ul type="disc">
+                        <li onmouseover="mudaFoto('imagens/home.png')" onmouseout="mudaFoto('imagens/contato.png')">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li onmouseover="mudaFoto('imagens/especificacoes.png')" onmouseout="mudaFoto('imagens/contato.png')">
+                            <a href="specs.html">Especificações</a>
+                        </li>
+                        <li onmouseover="mudaFoto('imagens/fotos.png')" onmouseout="mudaFoto('imagens/contato.png')">
+                            <a href="fotos.html">Fotos</a>
+                        </li>
+                        <li onmouseover="mudaFoto('imagens/multimidia.png')" onmouseout="mudaFoto('imagens/contato.png')">
+                            <a href="multimidia.html">Multimídia</a>
+                        </li>
+                        <li onmouseover="mudaFoto('imagens/contato.png')" onmouseout="mudaFoto('imagens/contato.png')">
+                            <a href="fale-conosco.html">Fale conosco</a>
+                        </li>
+                    </ul>
+                </nav>   
+            </header>
+
+            <section id="corpo-full">
+                <article id="noticia-principal">
+                    <header id="cabecalho-artigo">
+                        <hgroup>
+                            <h3>Fale Conosco > Contato</h3>
+                            <h1> Formulário de Contato</h1>
+                            <h2>por Gustavo Guanabara</h2>
+                            <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+                        </hgroup>
+                    </header>
+
+                    <form action="mailto:contato@cursoemvideo.com" method="post" id="frm_contato" oninput="calcular_Total();">
+                        <fieldset id="usuario">
+                            <legend>Identificação do Usuário</legend>
+                           <p>
+                                <label for="id_nome">Nome:</label> <input type="text" name="txt_nome" id="id_nome" size="20" maxlenght="30" placeholder="Nome Completo">
+                           </p>
+                            <p>
+                                <label for="id_senha">Senha:</label> <input type="password" name="txt_senha" id="id_senha" size="8" maxlength="8" placeholder="8 dígitos">
+                            </p>
+                            <p>
+                                <label for="id_email">E-mail:</label> <input type="email" name="txt_email" id="id_email" size="20" maxlength="40">
+                            </p>
+                            <fieldset id="sexo">
+                                <legend>Sexo:</legend>
+                                <input type="radio" name="txt_sexo" id="id_Masculino" checked> <label for="id_Masculino">Masculino</label> <br>
+                                <input type="radio" name="txt_sexo" id="id_Feminino"> <label for="id_Feminino">Feminino</label> 
+                            </fieldset>
+                            <p>
+                                <label for="id_data">Data de Nascimento:</label> <input type="date" name="txt_data" id="id_data">
+                            </p>
+                        </fieldset>
+
+                        <fieldset id="endereco">
+                            <legend>Endereço do Usuário</legend>
+                            <p>
+                                <label for="id_rua">Logradouro:</label> <input type="text" name="txt_rua" id="id_rua" size="13" maxlength="80" placeholder="Rua, Av, Trav, ...">
+                            </p>
+                            <p>
+                                <label for="id_numero">Número:</label> <input type="number" name="num_numero" id="id_numero" min="0" max="99999">
+                            </p>
+                            <p>
+                                <label for="id_estado">Estado:</label> <select name="sel_estado" id="id_estado">
+                                    <optgroup label="Região Sudeste">
+                                        <option value="RJ" selected>Rio de Janeito</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="MG">Minas Gerais</option>
+                                    </optgroup>
+                                    <optgroup label="Região Sul">
+                                        <option value="PR">Paraná</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                    </optgroup>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="id_cidade">Cidade:</label> <input type="text" name="txt_cidade" id="id_cidade" maxlength="40" size="20" placeholder="Sua Cidade" list="id_listaCidades">
+                            </p>
+                            <datalist id="id_listaCidades">
+                                <option value="Rio de Janeiro"></option>
+                                <option value="Nova iguaçu"></option>
+                                <option value="Niterói"></option>
+                                <option value="Belford Roxo"></option>
+                            </datalist>
+
+                        </fieldset>
+
+                        <fieldset id="mensagem">
+                            <legend>Mensagem do Usuário</legend>
+                            <p>
+                                <label for="id_urgencia">Grau de Urgência:</label> 
+                                Min<input type="range" name="ran_urgencia" id="id_urgencia" min="0" max="10" step="2">Max
+                            </p>
+                            <p>
+                                <label for="id_mensagem">Mensagem:</label>
+                                <textarea name="txt_mensagem" id="id_mensagem" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea>
+                            </p>
+                        </fieldset>
+
+                        <fieldset id="pedido">
+                            <legend>Quero um Google Glass</legend>
+                            <p>
+                                <input type="checkbox" name="chk_pedido" id="id_pedido" checked>
+                                <label for="id_pedido">Gostaria de adquirir um Google Glass quando disponível: </label>
+                            </p>
+                            <p>
+                                <label for="id_cor">Cor:</label>
+                                <input type="color" name="cor_color" id="id_cor" value="#0000FF">
+                            </p>
+                            <p>
+                                <label for="id_quantidade">Quantidade:</label>
+                                <input type="number" name="num_quantidade" id="id_quantidade" min="0" max="5" value="0">
+                            </p>
+                            <p>
+                                <label for="id_total">Preço Total: R$</label>
+                                <input type="number" name="num_total" id="id_total" placeholder="Total a Pagar" readonly>
+                            </p>
+                        </fieldset>
+
+                       <!-- <input type="submit" value="Enviar"> -->
+                        <input type="image" src="imagens/botao-enviar.png" alt="" name="btn_enviar">
+                        
+                    </form>
+                </article>
+            </section>
+
+            <footer id="rodape">
+                <p>
+                    Copyright &copy; 2013 - by Gustavo Guanabara <br>
+                    <a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a> | <a href="http://Twitter.com/cursosemvideo" target="_blank">Twitter</a>
+                </p>
+            </footer>
+        </section>
+        
+        <script src="javascript/funcoes.js"></script>
+    </body>
+</html>
