@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curso Completo de Html - CFB Cursos - Aula 108</title>
+        <link rel="stylesheet" href="css/estilos.css">
+    </head>
+    <body>
+        <section class="galeria">
+            <img src="imagens/appi-01.jpg" alt="App Inventor" onclick="mostrarImagem(this)">
+            <img src="imagens/arduino-01.jpg" alt="Arduino" onclick="mostrarImagem(this)">
+            <img src="imagens/cs-01.jpg" alt="CSharp" onclick="mostrarImagem(this)">
+            <img src="imagens/HTML_CP-01.jpg" alt="HTML Completo e Profissional" onclick="mostrarImagem(this)">
+            <img src="imagens/JS-01.jpg" alt="JavaScript" onclick="mostrarImagem(this)">
+            <img src="imagens/QT-01.jpg" alt="QT Creator" onclick="mostrarImagem(this)">
+        </section>
+
+        <section class="conteiner">
+            <span onclick="this.parentElement.style.display = 'none'" class="btn_fechar">&times;</span>
+            <img id="imagemGrande">
+        </section>
+
+        <section>
+            <p>
+                Galeria de Imagens
+            </p>
+        </section>
+
+        <script src="scrpts/script.js"></script>
+    </body>
+</html>
